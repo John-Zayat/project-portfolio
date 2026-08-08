@@ -468,6 +468,8 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
 
   .analysis-gallery { grid-template-columns: 1fr; }
   .analysis-panel-head { flex-direction: column; }
+
+  .uav-gallery { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
