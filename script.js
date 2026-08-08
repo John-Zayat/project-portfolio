@@ -52,21 +52,71 @@ tabButtons.forEach(button => {
 });
 
 const contactForm = document.querySelector('[data-contact-form]');
+
 if (contactForm) {
   contactForm.addEventListener('submit', event => {
     event.preventDefault();
-    const data = new FormData(contactForm);
-    const subject = `${data.get('enquiry')} — portfolio enquiry from ${data.get('name')}`;
-    const body = [
-      `Name: ${data.get('name')}`,
-      `Email: ${data.get('email')}`,
-      `Organisation: ${data.get('organisation') || 'Not provided'}`,
-      '',
-      String(data.get('message'))
-    ].join('\n');
+
+    const firstNameField = contactForm.querySelector('#first-name');
+    const lastNameField = contactForm.querySelector('#last-name');
+    const organisationField = contactForm.querySelector('#organisation');
+    const messageField = contactForm.querySelector('#message');
     const status = contactForm.querySelector('[data-form-status]');
-    if (status) status.textContent = 'Opening your email application…';
-    window.location.href = `mailto:johnzayat360@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const requiredTextFields = [
+      [firstNameField, 'Please enter a first name.'],
+      [lastNameField, 'Please enter a last name.'],
+      [organisationField, 'Please enter a company or organisation.'],
+      [messageField, 'Please enter a message.']
+    ];
+
+    for (const [field, validationMessage] of requiredTextFields) {
+      field.setCustomValidity('');
+
+      if (!field.value.trim()) {
+        field.setCustomValidity(validationMessage);
+        field.reportValidity();
+        return;
+      }
+    }
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    const data = new FormData(contactForm);
+
+    const fullName =
+      `${data.get('firstName')} ${data.get('lastName')}`.trim();
+
+    const subject =
+      `${data.get('enquiry')} — portfolio enquiry from ${fullName}`;
+
+    const body = [
+      `Name: ${fullName}`,
+      `Email: ${data.get('email')}`,
+      `Company / organisation: ${data.get('organisation')}`,
+      `Enquiry type: ${data.get('enquiry')}`,
+      '',
+      'Message:',
+      String(data.get('message')).trim()
+    ].join('\n');
+
+    if (status) {
+      status.textContent = 'Opening your email application…';
+    }
+
+    window.location.href =
+      `mailto:johnzayat360@gmail.com` +
+      `?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(body)}`;
+  });
+
+  contactForm.querySelectorAll('input, textarea').forEach(field => {
+    field.addEventListener('input', () => {
+      field.setCustomValidity('');
+    });
   });
 }
 
