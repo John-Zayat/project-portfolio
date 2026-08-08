@@ -355,11 +355,77 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
 .team-callout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 2rem; padding: 2rem; border-radius: 14px; background: var(--ink); color: var(--paper); }
 .team-callout p { margin: 0; color: #c9c5bd; }
 
-.module-years { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
-.module-year { border: 1px solid var(--line); border-radius: 12px; background: var(--paper-soft); }
-.module-year summary { cursor: pointer; padding: 1.1rem 1.25rem; font-weight: 750; }
-.module-year ul { columns: 2; margin: 0; padding: 0 1.25rem 1.25rem 2.4rem; color: var(--muted); font-size: .83rem; }
-.module-year li { break-inside: avoid; margin-bottom: .35rem; }
+.module-years {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 0.75rem;
+}
+
+.module-year {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper-soft);
+}
+
+.module-year summary {
+  cursor: pointer;
+  padding: 1.1rem 1.25rem;
+  font-weight: 750;
+}
+
+.module-year[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.module-table-wrap {
+  overflow-x: auto;
+}
+
+.module-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: var(--muted);
+  font-size: 0.83rem;
+}
+
+.module-table th,
+.module-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.module-table th {
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.module-table th:first-child,
+.module-table td:first-child {
+  width: 72%;
+}
+
+.module-table th:last-child,
+.module-table td:last-child {
+  width: 28%;
+  white-space: nowrap;
+}
+
+.module-table td:last-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.module-table tbody tr:last-child td {
+  border-bottom: 0;
+}
 
 /* About */
 .about-hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
@@ -461,7 +527,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
   .timeline-row p { grid-column: 2; }
   .finding-list li { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); }
   .team-callout, .status-panel { grid-template-columns: 1fr; }
-  .module-year ul { columns: 1; }
+  
   .about-portrait, .about-portrait img { min-height: 360px; }
   .form-grid { grid-template-columns: 1fr; }
   .field.full { grid-column: auto; }
