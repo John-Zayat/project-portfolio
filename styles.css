@@ -355,6 +355,15 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
 .team-callout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 2rem; padding: 2rem; border-radius: 14px; background: var(--ink); color: var(--paper); }
 .team-callout p { margin: 0; color: #c9c5bd; }
 
+.uav-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Continue with the remaining .uav-gallery rules */
+
 .module-years {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
