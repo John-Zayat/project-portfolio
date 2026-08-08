@@ -496,8 +496,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
 .contact-copy { position: sticky; top: 130px; }
 .contact-copy h1 { font-size: clamp(3.8rem, 7vw, 7rem); }
 .contact-copy p { color: var(--muted); }
-.contact-links { display: grid; gap: .7rem; margin-top: 2rem; }
-.contact-links a { font-weight: 750; text-underline-offset: 4px; }
+
 .contact-form { padding: clamp(1.5rem, 4vw, 3rem); border-radius: var(--radius); background: var(--panel); }
 .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .field { display: grid; gap: .4rem; }
