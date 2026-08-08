@@ -355,6 +355,24 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
 .team-callout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 2rem; padding: 2rem; border-radius: 14px; background: var(--ink); color: var(--paper); }
 .team-callout p { margin: 0; color: #c9c5bd; }
 
+.uav-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.uav-gallery figure {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper-soft);
+}
+
 .uav-gallery a {
   display: block;
   width: 100%;
@@ -370,9 +388,17 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
   object-fit: contain;
 }
 
-.uav-gallery figure {
-  display: grid;
-  grid-template-rows: auto 1fr;
+.uav-gallery figcaption {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.team-callout p {
+  margin: 0;
+  color: #c9c5bd;
 }
 
 .module-years {
