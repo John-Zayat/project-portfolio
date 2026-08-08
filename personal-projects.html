@@ -84,10 +84,145 @@
 
     <section class="section dark" id="testing">
       <div class="container"><div class="section-head"><div><span class="kicker">Hover Testing + Failure Investigation</span><h2>The prototype did not hover. The data explained why.</h2></div><p>Six unsuccessful trials were synchronised with flight-controller logs, video and audio to separate visible symptoms from plausible causes.</p></div>
-        <div class="test-grid">
-          <article class="test-card"><img src="assets/hover-test.jpg" alt="ARCHANGEL test airframe prepared for a hover trial"><div class="card-body"><h3>Full-system hover trials</h3><p>Repeated rapid pitch-up and loss of sustained vertical response showed that the aircraft lacked the thrust and control margin required for a stable hover.</p></div></article>
-          <article class="test-card"><img src="assets/failure-analysis.jpg" alt="MATLAB plots of EDF commands, acoustic spectrogram and vertical response"><div class="card-body"><h3>Synchronised MATLAB analysis</h3><p>EDF commands, acoustic frequency, acceleration and sensor-health data revealed asymmetric command behaviour, a measurable acoustic drop and severe magnetic inconsistency.</p></div></article>
-        </div>
+<div class="test-grid">
+
+  <!-- Full-System Hover Trials -->
+  <article class="test-card">
+    <video
+      class="test-media"
+      controls
+      playsinline
+      preload="metadata"
+      poster="assets/hover-test.jpg"
+      aria-label="ARCHANGEL full-system hover trial video"
+    >
+      <source src="assets/archangel-hover-trials.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+
+    <div class="card-body">
+      <h3>Full-System Hover Trials</h3>
+      <p>
+        Repeated rapid pitch-up and loss of sustained vertical response showed
+        that the aircraft lacked the thrust and control margin required for a
+        stable hover.
+      </p>
+    </div>
+  </article>
+
+  <!-- Synchronised MATLAB Analysis -->
+  <button
+    class="test-card analysis-card-button"
+    type="button"
+    aria-expanded="false"
+    aria-controls="matlab-analysis-panel"
+    data-analysis-toggle
+  >
+    <img
+      src="assets/failure-analysis.jpg"
+      alt="MATLAB plots of EDF commands, acoustic frequency and vertical response"
+    >
+
+    <span class="card-body">
+      <span class="analysis-title">Synchronised MATLAB Analysis</span>
+
+      <span class="analysis-copy">
+        EDF commands, acoustic frequency, acceleration and sensor-health data
+        revealed asymmetric command behaviour, a measurable acoustic drop and
+        severe magnetic inconsistency.
+      </span>
+
+      <span class="analysis-hint" data-analysis-hint>
+        View analysis evidence →
+      </span>
+    </span>
+  </button>
+
+</div>
+
+<!-- Expanded MATLAB content -->
+<div
+  class="analysis-panel"
+  id="matlab-analysis-panel"
+  data-analysis-panel
+  hidden
+>
+  <div class="analysis-panel-head">
+    <div>
+      <span class="kicker">Expanded evidence</span>
+      <h3>Synchronised Flight-Log Analysis</h3>
+    </div>
+
+    <button
+      class="analysis-close"
+      type="button"
+      data-analysis-close
+    >
+      Close
+    </button>
+  </div>
+
+  <p class="analysis-intro">
+    Flight-controller logs were synchronised with video and audio from the
+    hover trials. RCOU traces represent commanded ESC output rather than
+    measured thrust, while acoustic frequency was used as a proxy for changes
+    in EDF behaviour.
+  </p>
+
+  <div class="analysis-gallery">
+
+    <figure>
+      <a href="assets/matlab-edf-commands.jpg" target="_blank" rel="noreferrer">
+        <img
+          src="assets/matlab-edf-commands.jpg"
+          alt="MATLAB comparison of the four EDF command traces"
+        >
+      </a>
+      <figcaption>Four-EDF command comparison</figcaption>
+    </figure>
+
+    <figure>
+      <a href="assets/matlab-audio-analysis.jpg" target="_blank" rel="noreferrer">
+        <img
+          src="assets/matlab-audio-analysis.jpg"
+          alt="MATLAB audio spectrogram and tracked EDF frequency"
+        >
+      </a>
+      <figcaption>Audio spectrogram and frequency tracking</figcaption>
+    </figure>
+
+    <figure>
+      <a href="assets/matlab-attitude-analysis.jpg" target="_blank" rel="noreferrer">
+        <img
+          src="assets/matlab-attitude-analysis.jpg"
+          alt="MATLAB analysis of aircraft attitude and vertical response"
+        >
+      </a>
+      <figcaption>Attitude and vertical response</figcaption>
+    </figure>
+
+  </div>
+
+  <div class="analysis-video">
+    <h3>Flight-Log-Driven 3D Playback</h3>
+    <p>
+      A three-dimensional reconstruction used to compare the flight
+      controller’s estimated aircraft motion with the recorded hover-test footage.
+    </p>
+
+    <video
+      class="test-media"
+      controls
+      playsinline
+      preload="metadata"
+      poster="assets/failure-analysis.jpg"
+      aria-label="MATLAB three-dimensional hover-test simulation"
+    >
+      <source src="assets/matlab-3d-simulation.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+</div>
         <ul class="finding-list"><li><strong>Mass</strong>Approximately 8 kg left too little sustained thrust margin.</li><li><strong>Balance</strong>Centre of gravity and lift-thrust centroid alignment required tighter control.</li><li><strong>Power</strong>Shared distribution introduced avoidable system-level uncertainty.</li><li><strong>Architecture</strong>Complexity was added before the hover system was independently proven.</li></ul>
       </div>
     </section>
