@@ -69,3 +69,39 @@ if (contactForm) {
     window.location.href = `mailto:johnzayat360@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
+
+const analysisToggle = document.querySelector('[data-analysis-toggle]');
+const analysisPanel = document.querySelector('[data-analysis-panel]');
+const analysisClose = document.querySelector('[data-analysis-close]');
+const analysisHint = document.querySelector('[data-analysis-hint]');
+
+if (analysisToggle && analysisPanel) {
+  function setAnalysisPanel(open) {
+    analysisPanel.hidden = !open;
+    analysisToggle.setAttribute('aria-expanded', String(open));
+
+    if (analysisHint) {
+      analysisHint.textContent = open
+        ? 'Hide analysis evidence ↑'
+        : 'View analysis evidence →';
+    }
+
+    if (open) {
+      analysisPanel.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+
+  analysisToggle.addEventListener('click', () => {
+    setAnalysisPanel(analysisPanel.hidden);
+  });
+
+  if (analysisClose) {
+    analysisClose.addEventListener('click', () => {
+      setAnalysisPanel(false);
+      analysisToggle.focus();
+    });
+  }
+}
