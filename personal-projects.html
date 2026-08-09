@@ -22,7 +22,18 @@
       </div>
     </section>
 
-    <nav class="section-nav" aria-label="Case Study Sections"><div class="container"><a href="#overview">Overview</a><a href="#requirements">Requirements</a><a href="#development">Development</a><a href="#mechanisms">Mechanisms</a><a href="#prototypes">Prototypes</a><a href="#testing">Testing</a><a href="#outcomes">Outcomes</a></div></nav>
+    <nav class="section-nav" aria-label="Case study sections">
+  <div class="container">
+    <a href="#overview">Overview</a>
+    <a href="#requirements">Requirements</a>
+    <a href="#development">Development</a>
+    <a href="#mechanisms">Mechanisms</a>
+    <a href="#prototypes">Prototypes</a>
+    <a href="#analysis">Analysis</a>
+    <a href="#testing">Testing</a>
+    <a href="#outcomes">Outcomes</a>
+  </div>
+</nav>
 
     <section class="section" id="overview">
       <div class="container intro-grid">
@@ -82,6 +93,54 @@
       </div>
     </section>
 
+    </section>
+
+    <!-- Pre-test engineering analysis -->
+    <section class="section alt" id="analysis">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="kicker">Pre-test design analysis</span>
+            <h2>Simulation informed the airframe before manufacture.</h2>
+          </div>
+
+          <p>
+            STAR-CCM+ and Simcenter NASTRAN were used to assess the
+            aerodynamic and structural behaviour expected during cruise.
+            These predictions informed design development but were not
+            validated through forward-flight testing.
+          </p>
+        </div>
+
+        <div class="analysis-grid">
+
+          <figure class="analysis-card">
+            <a
+              class="analysis-image"
+              href="assets/archangel-fea-cruise.png"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the full-size ARCHANGEL wing deflection result"
+            >
+              <img
+                src="assets/archangel-fea-cruise.png"
+                alt="Simcenter NASTRAN prediction of ARCHANGEL wing deflection under cruise loading"
+              >
+            </a>
+
+            <figcaption>
+              <span class="kicker">Structural analysis</span>
+              <h3>Wing deflection during cruise</h3>
+
+              <p class="analysis-condition">
+                Simcenter NASTRAN · [cruise speed] · [applied load condition]
+              </p>
+
+              <p>
+                The cruise load case predicted a maximum deflection of
+               
+    
     <section class="section dark" id="testing">
       <div class="container"><div class="section-head"><div><span class="kicker">Hover Testing + Failure Investigation</span><h2>The prototype did not hover. The data explained why.</h2></div><p>Six full-system hover trials were synchronised with flight-controller logs, video and audio to separate visible symptoms from plausible causes.</p></div>
 <div class="test-grid">
