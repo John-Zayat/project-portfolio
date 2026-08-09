@@ -214,6 +214,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+  width: 100%;
 }
 
 .analysis-card {
@@ -223,6 +224,11 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--paper-soft);
+}
+
+/* Use the full grid while only the FEA card exists */
+.analysis-card:only-child {
+  grid-column: 1 / -1;
 }
 
 .analysis-image {
