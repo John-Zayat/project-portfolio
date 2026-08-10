@@ -360,6 +360,10 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
   .uav-gallery { grid-template-columns: 1fr; }
 
   .analysis-grid { grid-template-columns: 1fr; }
+
+  .metric-grid { grid-template-columns: 1fr; }
+  .metric { padding: 1.35rem 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .metric:last-child { border-bottom: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
