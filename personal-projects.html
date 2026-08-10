@@ -317,7 +317,12 @@
           alt="MATLAB comparison of the four EDF command traces"
         >
       </a>
-      <figcaption>Four-EDF Command Comparison</figcaption>
+      <figcaption>
+  <span>Four-EDF Command Comparison</span>
+  <p class="evidence-finding">
+    <strong>Finding:</strong> Unequal controller outputs and near-maximum commands indicate limited remaining authority to correct the lift imbalance.
+  </p>
+</figcaption>
     </figure>
 
     <figure>
@@ -327,7 +332,12 @@
           alt="MATLAB Audio Spectrograph and Tracked EDF Frequency"
         >
       </a>
-      <figcaption>Audio Spectrogram and Frequency Tracking</figcaption>
+      <figcaption>
+  <span>Audio Spectrogram and Frequency Tracking</span>
+  <p class="evidence-finding">
+    <strong>Finding:</strong> The dominant EDF frequency fell under maximum demand, suggesting a reduction in rotor speed during the attempt.
+  </p>
+</figcaption>
     </figure>
 
     <figure>
@@ -337,7 +347,12 @@
           alt="EKF Magnetic Innovation Test-Ratio Graph"
         >
       </a>
-      <figcaption>EKF Magnetic Innovation Test Ratio During EDF Operation</figcaption>
+      <figcaption>
+  <span>EKF Magnetic Innovation Test Ratio During EDF Operation</span>
+  <p class="evidence-finding">
+    <strong>Finding:</strong> Repeated threshold exceedances during EDF operation indicate substantial magnetic-measurement inconsistency.
+  </p>
+</figcaption>
     </figure>
 
   </div>
@@ -360,6 +375,11 @@
       <source src="assets/archangel-3D-recreations.mp4" type="video/mp4">
       Your browser does not support HTML video.
     </video>
+
+<p class="evidence-finding recreation-finding">
+  <strong>Finding:</strong> The reconstructed flight-controller attitude reproduces the rapid pitch-up seen in the test footage, confirming that the motion was captured in the onboard data.
+</p>
+    
   </div>
 </div>
         <ul class="finding-list"><li><strong>Mass</strong>Approximately 8 kg left too little sustained thrust margin.</li><li><strong>Balance</strong>Centre of gravity and lift-thrust centroid alignment required tighter control.</li><li><strong>Power</strong>Shared distribution introduced avoidable system-level uncertainty.</li><li><strong>Architecture</strong>Complexity was added before the hover system was independently proven.</li></ul>
