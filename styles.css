@@ -367,3 +367,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 650; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+.evidence-finding { margin: .45rem 0 0; color: #bdbab3; font-size: .78rem; font-weight: 400; line-height: 1.5; }
+.evidence-finding strong { color: #f3f1ec; font-weight: 700; }
+.recreation-finding { max-width: 760px; margin-top: .75rem; }
